@@ -1,6 +1,6 @@
 # 30 days of MDN
 
-Goal: every day have a peruse through the MDN list of Web APIs, pick one, have a read about it, give it a shot!
+Goal: every day have a peruse through the [MDN list of Web APIs](https://developer.mozilla.org/en-US/docs/Web/API), pick one, have a read about it, give it a shot!
 
 ## Day 1, Jan 28th 2018: [`AnalyserNode`](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode)
 
