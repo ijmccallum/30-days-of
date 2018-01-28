@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AnalyserNode: 30 Days of MDN</title>
+</head>
+<body>
+    <script>
+        /*
+        AnalyserNode is an audio thing. So to start playing with it we'll need some audio
+        */
+        var source;
+        if (navigator.getUserMedia) {
+            console.log('getUserMedia supported.');
+            navigator.getUserMedia (
+                { audio: true }, // constraints - only audio needed for this app
+                function(stream) { // Success callback
+                    source = audioCtx.createMediaStreamSource(stream);
+                    source.connect(analyser);
+                },
+                function(err) { // Error callback
+                    console.log('The following gUM error occured: ' + err);
+                }
+            );
+        } else {
+            console.log('getUserMedia not supported on your browser!');
+        }
+
+        /*
+        All audio processing happens inside an AudioContext 
+        (in the same way vector graphics happen inside an <SVG> and raster happens inside a <canvas>
+         - at least as far as I can tell)
+         So we need one of those too
+         "The AudioContext interface represents an audio-processing graph 
+         built from audio modules linked together, each represented by an AudioNode."
+        */
+        var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+
+        /*
+        "To extract data from your audio source, 
+        you need an AnalyserNode,
+        which is created using the AudioContext.createAnalyser() method"
+        */
+        var analyser = audioCtx.createAnalyser();
+
+        /*
+        Some more things I don't have time to go into!
+        These just came from the MDN example
+        */
+        var bufferLength = analyser.frequencyBinCount;
+        var dataArray = new Uint8Array(bufferLength);
+        analyser.getByteTimeDomainData(dataArray); //copies the current waveform into the dataArray
+
+        /*
+        That's the analyserNode set up, now for the visual part
+        an oscilloscope!
+        */
+    </script>
+
+    <canvas id="oscilloscope" style="margin: auto; display: block;" width="640"></canvas>
+
+    <script>
+        var canvas = document.getElementById("oscilloscope");
+        var canvasCtx = canvas.getContext("2d");
+        function draw() {
+            drawVisual = requestAnimationFrame(draw);//update every frame
+
+            analyser.getByteTimeDomainData(dataArray);//update data in the fancy array
+
+            canvasCtx.fillStyle = 'rgba(250, 250, 255, 0.1)';
+            canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+
+            canvasCtx.lineWidth = 1;
+            canvasCtx.strokeStyle = 'rgb(10,10,20)';
+
+            canvasCtx.beginPath();
+
+            var sliceWidth = canvas.width * 1.0 / bufferLength;
+            var x = 0;
+
+            for (var i = 0; i < bufferLength; i++) {
+
+                var v = dataArray[i] / 128.0;
+                var y = v * canvas.height / 2;
+
+                if (i === 0) {
+                    canvasCtx.moveTo(x, y);
+                } else {
+                    canvasCtx.lineTo(x, y);
+                }
+
+                x += sliceWidth;
+            }
+
+            canvasCtx.lineTo(canvas.width, canvas.height / 2);
+            canvasCtx.stroke();
+        };
+
+        draw();
+    </script>
+</body>
+</html>

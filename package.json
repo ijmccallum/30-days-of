@@ -1,0 +1,15 @@
+{
+  "name": "thirtydaysof",
+  "version": "0.0.1",
+  "description": "Thirty Days Of ...",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
