@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Float32Array: 30 Days of MDN</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 12px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            padding: 5px 10px;
+            border: 1px solid #eeeeee;
+        }
+        tr:nth-child(even) { background: #eeeeee; }
+        tr:nth-child(even) td { border: 1px solid #ffffff; }
+    </style>
+</head>
+<body>
+        <script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        /* Everything I'm reading about this mentions buffers, so lets start there! */
+        var buffer = new ArrayBuffer(16); //this only has one property: .byteLength and it now == 16
+        console.log('new buffer: ', buffer);
+
+        /* To "see into" this buffer we need a view,  */
+        var float32View = new Float32Array(buffer); //OH LOOK AT THAT! It's Float32Array!!
+        console.log('Float32Array view of the buffer: ', float32View); // [0, 0, 0, 0] interesting, so 4 bytes per float 32?
+
+        var float64View = new Float64Array(buffer); //Let's try another view of the same buffer...
+        console.log('Float64Array view of the same buffer: ', float64View); // [0, 0] whoa! so 8 bytes for a float 64!?
+
+        /* the views also let us edit the data in the buffer... */
+        float64View[0] = 1; float64View[1] = 2;
+        console.log('Float64Array with 1 & 2 set: ', float64View);
+
+        /* */
+        console.log('Float32Array view of that data: ', float32View);
+
+        int8View = new Int8Array(buffer);
+        uint8View = new Uint8Array(buffer);
+        uint8ClampedView = new Uint8ClampedArray(buffer);
+        int16View = new Int16Array(buffer);
+        uint16View = new Uint16Array(buffer);
+        int32View = new Int32Array(buffer);
+        uint32View = new Uint32Array(buffer);
+
+        var viewsArray = [
+            {'title': 'int8View', 'typedArray': int8View},
+            {'title': 'uint8View', 'typedArray': uint8View},
+            {'title': 'uint8ClampedView', 'typedArray': uint8ClampedView},
+            {'title': 'int16View', 'typedArray': int16View},
+            {'title': 'uint16View', 'typedArray': uint16View},
+            {'title': 'int32View', 'typedArray': int32View},
+            {'title': 'uint32View', 'typedArray': uint32View},
+            {'title': 'float32View', 'typedArray': float32View},
+            {'title': 'float64View', 'typedArray': float64View}
+        ]
+
+        /*
+        Probably the best article on MDN to start with: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays
+        "Typed Array...": An array like mechanisum giving access to raw binary data.
+        "...of 32-bit floating point numbers...":
+        "...in the platform byte order.":
+        "The contents are initialized to 0":
+
+        */
+        
+        
+        //let's make an interactive table
+        var makeTable = function() {
+            var tableMarkup = '<table>';
+            //rows are the types
+            viewsArray.forEach((viewType) => {
+                var rowMarkup = `<tr><td><button class="${viewType.title}">${viewType.title}</button></td>`;
+                viewType.typedArray.forEach((value) => {
+                    rowMarkup += `<td>${value}</td>`;
+                }); 
+                rowMarkup += '</tr>';
+                tableMarkup += rowMarkup;
+            });
+            tableMarkup += '</table>';
+
+            $('#arrr').html(tableMarkup);
+        };
+
+        $( document ).ready(function() {
+            makeTable();
+
+            $('#arrr').on('click', function(e) {
+                console.log('click', $(e.target).attr('class'));
+                var typeName = $(e.target).attr('class');
+                window[typeName].forEach((val, i) => {
+                    console.log('val', val, 'i', i);
+                    window[typeName][i] = i;
+                });
+                makeTable();
+            });
+        });
+    </script>
+    <p>
+       There is one 16 byte ArrayBuffer. Each row below represents a different 'view' of that buffer. 'Views' are typed arrays that have been initialized with the buffer. Click to set the values in a view to "i" - see what it does to the other views.
+    </p>
+    <div id="arrr"></div>
+</body>
+</html>
