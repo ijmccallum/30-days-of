@@ -10,8 +10,10 @@ From the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Au
 
 One of the [Globals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) available to JS. Specifically a type of [Typed Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) which can be used to "see" into a [buffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) (a fixed length array of raw binary). Also to edit buffers. Seems to be all about buffers really!
 
+## Day 3, Jan 30th 2018: [`CustomEvent`](https://ijmccallum.github.io/30-days-of/MDN/CustomEvent)
+
+It is what it's named, a [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent). One good use would be to [replace JS callbacks for UI component events](https://css-tricks.com/custom-events-are-pretty-cool/). Eg `document.getElementById('modal').addEventListener('modalOpened', () => { /* disable scrolling! */ })` as opposed to asking the modal JS to call a callback you pass it.
+
 Future ideas:
 
- - [Float32Array](https://developer.mozilla.org/en-US/docs/Web/API/Float32Array)
- - [Uint8Array](https://developer.mozilla.org/en-US/docs/Web/API/Uint8Array)
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
