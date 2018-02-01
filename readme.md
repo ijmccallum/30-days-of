@@ -14,6 +14,12 @@ One of the [Globals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 It is what it's named, a [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent). One good use would be to [replace JS callbacks for UI component events](https://css-tricks.com/custom-events-are-pretty-cool/). Eg `document.getElementById('modal').addEventListener('modalOpened', () => { /* disable scrolling! */ })` as opposed to asking the modal JS to call a callback you pass it.
 
+## Day 3, Jan 31st 2018: [`requestIdleCallback`](https://ijmccallum.github.io/30-days-of/MDN/requestIdleCallback)
+
+You've got some non-priority JS to run, pop it in a function and pass that to [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback). It's like saying, hey browser - whenever you've got time, no pressure, give that a bash. (They're also cancelable! Which I find cool :)
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
+ - [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame)
+ - Streams
