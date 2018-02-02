@@ -18,6 +18,10 @@ It is what it's named, a [CustomEvent](https://developer.mozilla.org/en-US/docs/
 
 You've got some non-priority JS to run, pop it in a function and pass that to [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback). It's like saying, hey browser - whenever you've got time, no pressure, give that a bash. (They're also cancelable! Which I find cool :)
 
+## Day 5, Feb 1st 2018: [`requestAnimationFrame`](https://ijmccallum.github.io/30-days-of/MDN/requestAnimationFrame)
+
+Pass it some animatino code, it tries to run it 60 times a second. Note that although MDN says it will match the frame rate I'm pretty sure it won't for 120fps screens - because if it did, old things might break (old things that assume 60fps).
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?

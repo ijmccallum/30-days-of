@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>requestAnimationFrame: 30 Days of MDN</title>
+    <style>
+        @-webkit-keyframes neon1 {
+            from {
+                /* box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177; */
+                top: 0;
+            }
+            to {
+                /* box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177; */
+                top: 10%;
+            }
+        }
+        @keyframes neon1 {
+            from {
+                /* box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177; */
+                top: 0;
+            }
+            to {
+                /* box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177; */
+                top: 10%;
+            }
+        }
+        html {
+            background-color: rgb(10,10,10);
+            padding: 40px;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .col {
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            position: relative;
+        }
+        .circle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(0, -100%);
+            width: 10px; height: 10px;
+            border-radius: 10px;
+            border: 1px solid white;
+            background: rgba(255,255,255,0.5);
+            box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+            animation: neon1 1.5s ease-in-out infinite alternate;
+        }
+        .circle--2 {
+            width: 20px;
+            height: 20px;
+            transform: translate(0, -40%);
+            border-radius: 20px;
+        }
+        .circle--3 {
+            width: 30px;
+            height: 30px;
+            transform: translate(0, -27%);
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col" id="rafnimation">
+            <div class="circle">
+                <div class="circle circle--2">
+                    <div class="circle circle--3"></div>
+                </div>            
+            </div>
+        </div>
+        <div class="col" id="nonimation">
+            <div class="circle">
+                <div class="circle circle--2">
+                    <div class="circle circle--3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 50px;">
+        <button onclick="raf()">Raf!</button>
+        <button onclick="go()">both!</button>
+        <button onclick="non()">timeout!</button>
+    </div>
+    <script>
+        var rafnimation = document.getElementById('rafnimation');
+        var rafnimationDeg = 0;
+        var raflastTime = false;
+        var rafprogress = false;
+
+        var nonimation = document.getElementById('nonimation');
+        var nonimationDeg = 0; 
+        var nonlastTime = false;
+        var nonprogress = false;
+        
+        function rafStep(highresTimeStamp){
+            if (!raflastTime) {
+                raflastTime = highresTimeStamp;
+                rafprogress = 0;
+            } else {
+                rafprogress = highresTimeStamp - raflastTime;
+                raflastTime = highresTimeStamp;
+            }
+
+            //rotate once a second, 360deg per 1000ms, 0.36deg per ms
+            rafnimationDeg += (rafprogress * 0.18);
+            rafnimation.style.transform = "rotate(" +rafnimationDeg+ "deg)";
+            if (rafnimationDeg < 3600) {
+                window.requestAnimationFrame(rafStep);
+            }
+        } 
+
+        function nonRafStep(){
+            highresTimeStamp2 = performance.now();
+            if (!nonlastTime) {
+                nonlastTime = highresTimeStamp2;
+                nonprogress = 0;
+            } else {
+                nonprogress = highresTimeStamp2 - nonlastTime;
+                nonlastTime = highresTimeStamp2;
+            }
+            
+            nonimationDeg += (nonprogress * 0.18);
+            nonimation.style.transform = "rotate(" +nonimationDeg+ "deg)";
+            if (nonimationDeg < 3600) {
+                setTimeout(function(){ 
+                    nonRafStep();
+                }, 1);
+            }
+        }
+
+        function raf() {
+            rafnimationDeg = 0;
+            raflastTime = false;
+            rafprogress = false;
+            rafStep();
+        }
+        function non() {
+            nonimationDeg = 0; 
+            nonlastTime = false;
+            nonprogress = false;
+            nonRafStep();
+        }
+        function go(){
+            raf();
+            non();
+        }
+    </script>
+</body>
+</html>
