@@ -22,8 +22,12 @@ You've got some non-priority JS to run, pop it in a function and pass that to [r
 
 Pass it some animatino code, it tries to run it 60 times a second. Note that although MDN says it will match the frame rate I'm pretty sure it won't for 120fps screens - because if it did, old things might break (old things that assume 60fps).
 
+## Day 6, Feb 2nd 2018: [`pageEvents`](https://ijmccallum.github.io/30-days-of/MDN/pageEvents)
+
+Just scroll through the [events list on MDN](https://developer.mozilla.org/en-US/docs/Web/Events) - it's a little bit bonkers. I pulled out a few that would be of interest to performance work. The others will just have to wait for their turn!
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
- - [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame)
+ - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
  - Streams

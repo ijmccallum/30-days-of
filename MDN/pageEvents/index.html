@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pageEvents: 30 Days of MDN</title>
+</head>
+<body>
+    <script>
+        /*
+        Not a crazy amount going on in this one
+        Just logging some events to an array and console.tabling it out :)
+        Although digging around trying to find out if there are more fine grained 
+        event timings I did come accross window.performance... THAT's what I'm TALKIN ABOUT!!
+        */
+        var events = [];
+        function logit(label){
+            events.push({ event: label, time: performance.now() });
+            if (label == 'readystatechange: complete' || label == 'unload') {
+                console.table(events);
+            }
+        }
+        //alternatives to the other event listeners?
+        document.onreadystatechange = function () {
+            logit("readystatechange: " + document.readyState);
+        }
+        //When the DOM has been parsed - doesn't wait for other resources
+        document.addEventListener('DOMContentLoaded', () => { logit('DOMContentLoaded'); });
+        //When all resources have been loaded
+        window.addEventListener('load', () => { logit('load'); });
+
+        //connecting and disconnecting to the network - handy!
+        window.addEventListener('offline', () => { logit('offline'); });
+        window.addEventListener('online', () => { logit('online'); });
+
+        //Just before the page loads - there are some caveats to using this, probably best to just avoid
+        window.addEventListener('beforeunload', () => { logit('beforeunload'); });
+
+        //There's no stopping it now
+        window.addEventListener('unload', () => { logit('unload'); });
+
+        if (window.performance) {
+
+        }
+    </script>
+</body>
+</html>
