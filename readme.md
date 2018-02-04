@@ -26,6 +26,10 @@ Pass it some animatino code, it tries to run it 60 times a second. Note that alt
 
 Just scroll through the [events list on MDN](https://developer.mozilla.org/en-US/docs/Web/Events) - it's a little bit bonkers. I pulled out a few that would be of interest to performance work. The others will just have to wait for their turn!
 
+## Day 7, Feb 3rd 2018: ['mini-site-generator](https://www.npmjs.com/package/mini-site-generator)
+
+That's not an MDN thing! Nope, you're right. I got sucked into building a static site generator! One of those shower ideas struck and I couldn't help myself. Giving myself an MDN pass for today, that was some good work!
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
