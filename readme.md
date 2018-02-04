@@ -26,9 +26,13 @@ Pass it some animatino code, it tries to run it 60 times a second. Note that alt
 
 Just scroll through the [events list on MDN](https://developer.mozilla.org/en-US/docs/Web/Events) - it's a little bit bonkers. I pulled out a few that would be of interest to performance work. The others will just have to wait for their turn!
 
-## Day 7, Feb 3rd 2018: ['mini-site-generator](https://www.npmjs.com/package/mini-site-generator)
+## Day 7, Feb 3rd 2018: [`mini-site-generator`](https://www.npmjs.com/package/mini-site-generator)
 
 That's not an MDN thing! Nope, you're right. I got sucked into building a static site generator! One of those shower ideas struck and I couldn't help myself. Giving myself an MDN pass for today, that was some good work!
+
+## Day 8, Feb 4th 2018: [`performance`](https://ijmccallum.github.io/30-days-of/MDN/performance)
+
+Another MDN pass day. After building that static site generator yesterday it would seem pretty silly not to use it for my own static site. So over from [Harp](http://harpjs.com/) it goes. Then into performance I dive, have a look at [the results](https://ijmccallum.github.io/30-days-of/MDN/performance)!
 
 Future ideas:
 
