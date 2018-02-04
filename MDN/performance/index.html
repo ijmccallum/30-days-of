@@ -10,17 +10,17 @@
     <p>Another cheat day - it's not MDN! After building the <a href="https://www.npmjs.com/package/mini-site-generator">mini-site-generator</a> yesterday, I decided to use to day to convert my personal site from <a href="http://harpjs.com/">harp</a> to my own little DIY one. And then some performance work began:</p>
     <hr>
     <p><em>First run</em> - the baseline. Markup, CSS, and JS are broken up into their own files. Then the font file from google fonts is in 2 - the css with the font-face defenition and the woff2 file.</p>
-    <img src="/30-days-of/MDN/CustomEvent/perf1_multiple_resources.png" alt="">
+    <img src="/30-days-of/MDN/performance/perf1_multiple_resources.png" alt="">
     <hr>
     <p><em>Second run</em> - I recently found out about adding rel="preconnect" and "crossorigin" to resources that come from other domains. So I popped in a preconnect link to the fonts.gstatic domain in the hope that the dns, connect, and ssl time would get knocked off:</p>
     <p>&lt;link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin&gt;</p>
-    <img src="/30-days-of/MDN/CustomEvent/perf2_preconnect.png" alt="">
+    <img src="/30-days-of/MDN/performance/perf2_preconnect.png" alt="">
     <hr>
     <p><em>Third run</em> - preconnect worked! Now to that big purple blob on the main thread, seems to me that the browser isn't willing to run the CSS until it has all of it. So that call to the google font css file is blocking it a little. Also it's still not quite finished the connection by the time the other stuff has loaded. Next step: self hosting it.</p>
-    <img src="/30-days-of/MDN/CustomEvent/perf3_selfhosted.png" alt="">
+    <img src="/30-days-of/MDN/performance/perf3_selfhosted.png" alt="">
     <hr>
     <p><em>Fourth run</em> - Well that's interesting. Even though I'm getting the first bytes faster, all benefit is lost as it's no longer on Google's CDN. Also the document complete is pushed past the font file loading. Final idea - if inlining the css and js gets rid of the waiting time for those guys, maybe the font will start downloading sooner.</p>
-    <img src="/30-days-of/MDN/CustomEvent/perf4_inline.png" alt="">
+    <img src="/30-days-of/MDN/performance/perf4_inline.png" alt="">
     <hr>
     <p>It worked! And that beats the google CDN too - note that when I was loading from the CDN with the preconnect it wasn't being pushed back by the css & js loading. So going back to that wouldn't make it any faster. I'm nearly at top speed here. The only improvments might be to find a smaller font or to just get rid of it and use system fonts instead. But to be honest, I'm quite happy with where it is.</p>
 </body>
