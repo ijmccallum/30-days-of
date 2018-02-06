@@ -34,6 +34,10 @@ That's not an MDN thing! Nope, you're right. I got sucked into building a static
 
 Another MDN pass day. After building that static site generator yesterday it would seem pretty silly not to use it for my own static site. So over from [Harp](http://harpjs.com/) it goes. Then into performance I dive, have a look at [the results](https://ijmccallum.github.io/30-days-of/MDN/performance)!
 
+## Day 9, Feb 5th 2018 [`Notifications`](https://ijmccallum.github.io/30-days-of/MDN/Notifications)
+
+Desktop [notifications](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API) - those annoying things that all the websites now want to ask your permission for. Well we can do them too!
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?

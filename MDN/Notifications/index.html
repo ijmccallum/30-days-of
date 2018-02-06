@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>notification: 30 Days of MDN</title>
+</head>
+<body>
+    <button onclick="notifyMe()">Notify me!</button>
+    <script>
+        //desktop notifications!
+        function notifyMe() {
+            // Let's check if the browser supports notifications
+            if (!("Notification" in window)) {
+                console.log("notifications aint supported here :(");
+                return;
+            }
+
+            if (Notification.permission === "denied") {
+                console.log('notifications were denied :(');
+                return;
+            }
+            
+            //so it's not denied... if it's not granted - it's not been aksed!
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission(function (permission) {
+                    // If the user accepts, let's create a notification
+                    if (permission === "granted") {
+                        var notification = new Notification("Thanks!");
+                    }
+                });
+            }
+
+            if (Notification.permission === "granted") {
+                // If it's okay let's create a notification
+                var notification = new Notification("A THING has HAPPENED!", {
+                    body: "It was an incredible thing - really really incredible!"
+                });
+            }
+        }
+    </script>
+</body>
+</html>
