@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Channel_Messaging_API: 30 Days of MDN</title>
+</head>
+<body>
+    <iframe src="./subpage.html" frameborder="0"></iframe>
+    <script>
+        var channel = new MessageChannel();
+        var ifr = document.querySelector('iframe');
+        var otherWindow = ifr.contentWindow;
+        ifr.addEventListener("load", iframeLoaded, false);        
+        function iframeLoaded() {
+            otherWindow.postMessage('Hello from the main page!', '*', [channel.port2]);
+        }
+        
+        channel.port1.onmessage = handleMessage;
+        function handleMessage(e) {
+            console.log('message: ', e);
+        }
+    </script>
+</body>
+</html>
