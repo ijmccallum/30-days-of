@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Element: 30 Days of MDN</title>
+    <style>
+        .class1 {
+            border: 2px solid lightseagreen;
+            color: lightseagreen;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body style="padding:20px;">
+    <div id="elementid" class="class1 c2 c3" aria-label="ARIA label">Inner text</div>
+    <script>
+        // Just playing around looking at what the element properties actually return
+        var element = document.getElementById('elementid');
+        var arProps = {
+            "attributes (not their values)": element.attributes,
+            "classList": element.classList,
+        }
+        var props = {
+            "className": element.className,
+            "clientHeight": element.clientHeight,
+            "clientLeft": element.clientLeft,
+            "clientTop": element.clientTop,
+            "clientWidth": element.clientWidth,
+            "computedName": element.computedName,
+            "computedRole": element.computedRole,
+            "id": element.id,
+            "innerHTML": element.innerHTML,
+            "localName": element.localName,
+            "namespaceURI": element.namespaceURI,
+            "outerHTML": element.outerHTML,
+            "prefix": element.prefix,
+            "scrollHeight": element.scrollHeight,
+            "scrollLeft": element.scrollLeft,
+            "scrollLeftMax": element.scrollLeftMax,
+            "scrollTop": element.scrollTop,
+            "scrollTopMax": element.scrollTopMax,
+            "scrollWidth": element.scrollWidth,
+            "shadowRoot": element.shadowRoot,
+            "slot": element.slot,
+            "tabStop": element.tabStop,
+            "tagName": element.tagName,
+            "undoManager": element.undoManager,
+            "undoScope": element.undoScope
+
+        }
+        console.table(arProps);
+        console.table(props);
+    </script>
+</body>
+</html>

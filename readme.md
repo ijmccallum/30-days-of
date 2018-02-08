@@ -42,8 +42,16 @@ Desktop [notifications](https://developer.mozilla.org/en-US/docs/Web/API/Notific
 
 Having a parent page and an iframe chat to each other through the [Channel_Messaging_API](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API). Apparently this can happen through a shared web worker too... Will have to give web aorkers their own day then maybe circle back to this messaging api!
 
+## Day 11, Feb7th 2018 [`Element`](https://ijmccallum.github.io/30-days-of/MDN/Element/)
+
+The base class from which all other elements inherit (eg, the `<html>` element or the `<svg>`). Pretty fundamental! The code here is just grabbing an element and looking at what the properties actually return.
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
  - Streams
+ - console.
+ - node
+ - element properties
+ - https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap
