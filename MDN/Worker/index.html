@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Worker: 30 Days of MDN</title>
+</head>
+<body>
+    <input type="text" id="in" value="" placeholder="Write something in here">
+    <p id="out"></p>
+    <script>
+        //spawn workers in a new thread
+        //can use XMLHttpRequest 
+        var inEl = document.getElementById('in');
+        var outEl = document.getElementById('out');
+
+        function postToWorker(){
+            console.log("posting to worker");
+            workee.postMessage(inEl.value);
+        }
+
+        function handleWorkeeMsg(msg){
+            console.log("worker message: ", msg);
+            outEl.textContent = msg.data;
+
+        }
+
+        function handleWorkeeErr(e){
+            console.log('error: ', e);
+        }
+
+        if (window.Worker) {
+            var workee = new Worker("/MDN/Worker/worker.js");
+            console.log('workee!', workee);
+
+            inEl.onkeyup = postToWorker;
+            workee.onmessage = handleWorkeeMsg;
+            workee.onerror = handleWorkeeErr;
+        } else {
+            console.log('no worker :(');
+        }
+    </script>
+</body>
+</html>

@@ -42,9 +42,13 @@ Desktop [notifications](https://developer.mozilla.org/en-US/docs/Web/API/Notific
 
 Having a parent page and an iframe chat to each other through the [Channel_Messaging_API](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API). Apparently this can happen through a shared web worker too... Will have to give web aorkers their own day then maybe circle back to this messaging api!
 
-## Day 11, Feb7th 2018 [`Element`](https://ijmccallum.github.io/30-days-of/MDN/Element/)
+## Day 11, Feb 7th 2018 [`Element`](https://ijmccallum.github.io/30-days-of/MDN/Element/)
 
 The base class from which all other elements inherit (eg, the `<html>` element or the `<svg>`). Pretty fundamental! The code here is just grabbing an element and looking at what the properties actually return.
+
+## Day 12, Feb 8th 2018 [`Worker`](https://ijmccallum.github.io/30-days-of/MDN/Worker/)
+
+Super quick set up with a [`Worker`](https://developer.mozilla.org/en-US/docs/Web/API/Worker). As front end work gets more interesting I'll be sure to start using these more - that was so easy! Been on the todo list to try for a while... check!
 
 Future ideas:
 
