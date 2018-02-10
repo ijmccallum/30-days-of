@@ -54,7 +54,9 @@ Super quick set up with a [`Worker`](https://developer.mozilla.org/en-US/docs/We
 
 Haven't got this one quite working yet. Tricky little one. It's an interesting one but support is low, implementation seems a bit shaky, and debugging is quite difficult. Gave it a good shot but it doesn't seem my test is going anywhere. Ah well! Seems they might be on the way out anyway!
 
-## Day 14, Feb 10th 2018 []()
+## Day 14, Feb 10th 2018 [`attachShadow`](https://ijmccallum.github.io/30-days-of/MDN/attachShadow/)
+
+Another simple one, part of the process in creating a shadow DOM. Probably about as basic an example as you can get here. More advanced stuff will come later!
 
 Future ideas:
 
