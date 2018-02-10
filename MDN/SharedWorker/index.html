@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SharedWorker: 30 Days of MDN</title>
+    <style>
+        .row {
+            display: flex;
+            justify-content: space-around;
+        }
+        .col {
+            padding: 10px;
+            text-align: center;
+        }
+        iframe {
+            width: 300px;
+            height: 200px;
+            border: 1px solid rgba(46, 71, 170, 0.74);
+            -webkit-box-shadow: inset 1px -1px 21px 0px #848FBA; 
+            box-shadow: inset 1px -1px 21px 0px #848FBA;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col">
+            <iframe src="page1.html" frameborder="0"></iframe>
+        </div>
+        <div class="col">
+            <iframe src="page2.html" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="text" id="in" value="" placeholder="Write something in here">
+            <p id="out"></p>
+        </div>
+    </div>
+    <script>
+            //spawn workers in a new thread
+            //can use XMLHttpRequest 
+            var inEl = document.getElementById('in');
+            var outEl = document.getElementById('out');
+    
+            function postToWorker(){
+                console.log("0 posting to worker");
+                workee.port.postMessage(inEl.value);
+            }
+    
+            function handleWorkeeMsg(msg){
+                console.log("0 worker message: ", msg);
+                outEl.textContent = msg.data;
+    
+            }
+    
+            function handleWorkeeErr(e){
+                console.log('0 error: ', e);
+            }
+    
+            if (window.SharedWorker) {
+                // var workee = new SharedWorker("/MDN/Worker/worker.js");
+                var workee = new SharedWorker("worker.js");
+                console.log('workee!', workee);
+    
+                inEl.onkeyup = postToWorker;
+                workee.port.onmessage = handleWorkeeMsg;
+                workee.port.onerror = handleWorkeeErr;
+                workee.port.start();
+            } else {
+                console.log('0 no worker :(');
+            }
+        </script>
+</body>
+</html>

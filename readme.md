@@ -50,6 +50,10 @@ The base class from which all other elements inherit (eg, the `<html>` element o
 
 Super quick set up with a [`Worker`](https://developer.mozilla.org/en-US/docs/Web/API/Worker). As front end work gets more interesting I'll be sure to start using these more - that was so easy! Been on the todo list to try for a while... check!
 
+## Day 13, Feb 9th 2018 [`SharedWorker`](https://ijmccallum.github.io/30-days-of/MDN/SharedWorker/)
+
+Haven't got this one quite working yet. Tricky little one. Cool idea though! Cross window communication! 
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
