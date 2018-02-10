@@ -52,7 +52,9 @@ Super quick set up with a [`Worker`](https://developer.mozilla.org/en-US/docs/We
 
 ## Day 13, Feb 9th 2018 [`SharedWorker`](https://ijmccallum.github.io/30-days-of/MDN/SharedWorker/)
 
-Haven't got this one quite working yet. Tricky little one. Cool idea though! Cross window communication! 
+Haven't got this one quite working yet. Tricky little one. It's an interesting one but support is low, implementation seems a bit shaky, and debugging is quite difficult. Gave it a good shot but it doesn't seem my test is going anywhere. Ah well! Seems they might be on the way out anyway!
+
+## Day 14, Feb 10th 2018 []()
 
 Future ideas:
 

@@ -44,9 +44,10 @@
             //can use XMLHttpRequest 
             var inEl = document.getElementById('in');
             var outEl = document.getElementById('out');
+            var workee;
     
             function postToWorker(){
-                console.log("0 posting to worker");
+                console.log("0 posting to worker", inEl.value);
                 workee.port.postMessage(inEl.value);
             }
     
@@ -62,13 +63,18 @@
     
             if (window.SharedWorker) {
                 // var workee = new SharedWorker("/MDN/Worker/worker.js");
-                var workee = new SharedWorker("worker.js");
-                console.log('workee!', workee);
-    
+                workee = new SharedWorker("worker.js", "sharedscope");
+                
                 inEl.onkeyup = postToWorker;
-                workee.port.onmessage = handleWorkeeMsg;
-                workee.port.onerror = handleWorkeeErr;
+                workee.port.addEventListener('message', function(e){
+                    console.log('HI', e);
+                });
+                workee.port.addEventListener('error', handleWorkeeErr);
+                // workee.port.onmessage = handleWorkeeMsg;
+                // workee.port.onerror = handleWorkeeErr;
+                // workee.onerror = handleWorkeeErr;
                 workee.port.start();
+                console.log('0 workee!', workee);
             } else {
                 console.log('0 no worker :(');
             }
