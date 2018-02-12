@@ -58,6 +58,10 @@ Haven't got this one quite working yet. Tricky little one. It's an interesting o
 
 Another simple one, part of the process in creating a shadow DOM. Probably about as basic an example as you can get here. More advanced stuff will come later!
 
+## Day 15, Feb 11th 2018 [`querySelectorAll`](https://ijmccallum.github.io/30-days-of/MDN/querySelectorAll/)
+
+The jQuery killer! Maybe. Just supplying that selector like interface in plain vanilla JS.
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
