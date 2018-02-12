@@ -62,6 +62,10 @@ Another simple one, part of the process in creating a shadow DOM. Probably about
 
 The jQuery killer! Maybe. Just supplying that selector like interface in plain vanilla JS.
 
+## Day 16, Feb 12th 2018 [`NodeList`](https://ijmccallum.github.io/30-days-of/MDN/NodeList/)
+
+The list of nodes returned by something like querySelectorAll. Very much like an array - but not an array. This just plays with a few of the properties / functions that come with a NodeList to see what's what with it.
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
