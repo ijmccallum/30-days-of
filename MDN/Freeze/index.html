@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Freeze: 30 Days of MDN</title>
+</head>
+<body>
+    <script>
+        /*
+        Making objects immutable! Or at least their surface assignments.
+        */
+        var tester = {
+            a: 1, b: 2, c: 3,
+            nested: {
+                na: 1, nb: 2, nc: 3
+            }
+        }
+
+        var frozen = Object.freeze(tester);
+
+        console.log('tester is frozen?', Object.isFrozen(tester));
+        console.log('frozen is frozen?', Object.isFrozen(frozen));
+        console.log('tester.nested is frozen?', Object.isFrozen(tester.nested));
+
+        /*
+        This'll do a 'deep freeze' <- that would be a better name, it's the name they used in MDN
+        */
+        function freCurse(obj) {
+            for (var prop in obj) {
+                if (typeof obj[prop] == 'object' && obj[prop] !== null) {
+                    freCurse(obj[prop]);
+                }
+            }
+            Object.freeze(obj);
+        }
+        
+
+        freCurse(tester);
+        console.log('tester.nested is frozen?', Object.isFrozen(tester.nested));
+
+        delete tester.b;
+        tester.c = 500;
+        tester.d = 600;
+        console.log('tester after trying to modify it: ', tester);
+
+        /*
+        For deeper immutable javascript there's a lib you can use... immutable.js - whoda thunk it!
+        */
+
+        //-----------------------
+
+        /*
+        And then there's seal and isSealed! Stops new properties being added or properties being deleted
+        */
+
+        var seal = {
+            a: 1,
+            b: 2
+        }
+
+        Object.seal(seal);
+
+        seal.a = 100;
+        delete seal.b;
+        seal.c = 500;
+        console.log('seal test: ', seal);
+    </script>
+</body>
+</html>

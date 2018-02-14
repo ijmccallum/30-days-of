@@ -66,6 +66,10 @@ The jQuery killer! Maybe. Just supplying that selector like interface in plain v
 
 The list of nodes returned by something like querySelectorAll. Very much like an array - but not an array. This just plays with a few of the properties / functions that come with a NodeList to see what's what with it.
 
+## Day 17, Feb 13th 2018 [`Object.Freeze`](https://ijmccallum.github.io/30-days-of/MDN/Freeze/)
+
+Doing immutable JS with plain vanilla JS! It makes the first 'layer' of key value pairs in an object 'frozen', though nested objects aren't affected. Also had a look at `Object.seal` - never even heard of that one!
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
