@@ -77,5 +77,6 @@ Future ideas:
  - Streams
  - console.
  - node
+ - object.freeze
  - element properties
  - https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap
