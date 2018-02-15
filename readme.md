@@ -70,6 +70,10 @@ The list of nodes returned by something like querySelectorAll. Very much like an
 
 Doing immutable JS with plain vanilla JS! It makes the first 'layer' of key value pairs in an object 'frozen', though nested objects aren't affected. Also had a look at `Object.seal` - never even heard of that one!
 
+## Day 18, Feb 14th 2018 [`Console`](https://ijmccallum.github.io/30-days-of/MDN/Console/)
+
+All the things console! I use it every day, but it still had some hidden gems - particularly console.assert. Seems like it would be a good easy way to gently introduce testing to a team who hasn't started writing tests yet (*cough* work *cough*). Also trace! That'll be an interesting one for the more functional projects!
+
 Future ideas:
 
  - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?

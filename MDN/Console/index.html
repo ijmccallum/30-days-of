@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Console: 30 Days of MDN</title>
+</head>
+<body>
+    <script>
+        /*
+        The console! Our favorite thing :)
+        */
+
+        console.profile('console profile');
+        console.time('console timing');
+
+        console.log('blah');
+        console.log('blah');
+        console.log('blah');
+        console.clear();
+
+        var theTruth = false;
+        console.assert(document.querySelector('.i-exist'), 'I don\'t exist?!?');
+
+
+        var level1 = function(){
+            level2()
+        }
+        var level2 = function(){
+            level3()
+        }
+        var level3 = function(){
+            console.assert(theTruth, 'Everythign I know is wrong!');
+            console.trace();
+        }
+
+        level1();
+
+        console.group('1');
+        console.log('hello');
+        console.info('hello');
+        console.warn('hello');
+        console.error('hello');
+        console.groupEnd();
+
+        var arr = [1, 2, 3, '4', 'five'];
+        var obj = {
+            one: 1,
+            two: 2,
+            three: 3,
+            four: '4',
+            five: 'five'
+        }
+        var multiArr = [obj, obj, {
+            two: 2,
+            three: 3,
+            four: '4',
+            five: 'five',
+            six: 'six'
+        }];
+        var arrArr = [
+            [1,2,3],
+            [2,3,4],
+            [3,4,5]
+        ]
+
+        console.table(arr);
+        console.table(obj);
+        console.table(multiArr);
+        console.table(arrArr);
+
+        console.timeEnd('console timing');
+        console.profileEnd('console profile');
+    </script>
+</body>
+</html>
