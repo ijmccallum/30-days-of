@@ -74,9 +74,10 @@ Doing immutable JS with plain vanilla JS! It makes the first 'layer' of key valu
 
 All the things console! I use it every day, but it still had some hidden gems - particularly console.assert. Seems like it would be a good easy way to gently introduce testing to a team who hasn't started writing tests yet (*cough* work *cough*). Also trace! That'll be an interesting one for the more functional projects!
 
+## Day 18, Feb 15th 2018 [`getUserMedia](https://ijmccallum.github.io/30-days-of/MDN/getUserMedia/)
+
 Future ideas:
 
- - [MediaDevices.getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) ?replaces navigator.getUserMedia?
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
  - Streams
  - console.
