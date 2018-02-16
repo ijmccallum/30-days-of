@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>matchMedia: 30 Days of MDN</title>
+</head>
+<body>
+    <script>
+        var media = {
+            isPortrait: window.matchMedia("(orientation: portrait)"),
+            isSmall: window.matchMedia("(max-width: 400px)")
+        };
+
+        if (media.isPortrait.matches) {
+            console.log('portrait!');
+        }
+        if (!media.isPortrait.matches) {
+            console.log('landscape!');            
+        }
+        if (media.isSmall.matches) {
+            console.log('small!');
+        }
+        if (!media.isSmall.matches) {
+            console.log('not small!');            
+        }
+
+        var orientationChangeHandler = function(MQ){
+            console.log('the orientation changed!', MQ);
+        }
+
+        var smallBreakpointHandler = function(MQ){
+            console.log('small breakpoint handler!', MQ);
+        }
+
+        media.isPortrait.addListener(orientationChangeHandler);
+        media.isSmall.addListener(smallBreakpointHandler);
+    </script>
+</body>
+</html>

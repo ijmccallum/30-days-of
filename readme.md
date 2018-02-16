@@ -78,12 +78,14 @@ All the things console! I use it every day, but it still had some hidden gems - 
 
 Request video from a camera and audio from a mic (if there is one). Another super simple one. I think the fun with this would be piping the media through some crazy effects.
 
+## Day 20, Feb 16th 2018 [`matchMedia`](https://ijmccallum.github.io/30-days-of/MDN/matchMedia/)
+
+Media query events! I'm guessing under the hood this is driven off the same thing that drives css media queries. So, very likley, we have access to the same ones! (Don't take my word for it, try it!)
+
 Future ideas:
 
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
  - Streams
- - console.
  - node
- - object.freeze
  - element properties
  - https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap
