@@ -82,9 +82,14 @@ Request video from a camera and audio from a mic (if there is one). Another supe
 
 Media query events! I'm guessing under the hood this is driven off the same thing that drives css media queries. So, very likley, we have access to the same ones! (Don't take my word for it, try it!)
 
+## Day 21, Feb17th 2018 [`hasFocus`](https://ijmccallum.github.io/30-days-of/MDN/hasFocus/)
+
+A teeny one but probably a useful one one day! Lets you know if the user is focused on the current page. Would probably be nice to give some kind of visual indication of focus. It's super easy! Also a lead in to the Page_Visibility_API which I'll have to gieva whirl in a future day.
+
 Future ideas:
 
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
+ - https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
  - Streams
  - node
  - element properties
