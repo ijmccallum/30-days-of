@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOMImplementation: 30 Days of MDN</title>
+</head>
+<body>
+    <script>
+        /*
+        creating DOMs! Mad - the examples look to use this as a way of replacing the content of an iframe.
+        Not sure why, unless maybe you were looking to maybe polyfill shadow dom?
+        */
+        var doc = document.implementation.createDocument('http://www.w3.org/1999/xhtml', 'html');
+        console.log('doc', doc);
+        var doc2 = document.implementation.createHTMLDocument("New Document"); //string goes into the <title> I think
+        console.log('doc2', doc2);
+
+        var svgType = document.implementation.createDocumentType('svg:svg', '-//W3C//DTD SVG 1.1//EN', 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd');
+        console.log('svgType', svgType);
+        var svgDoc = document.implementation.createDocument('http://www.w3.org/2000/svg', 'svg:svg', svgType);
+        console.log('doc', svgDoc);
+    </script>
+</body>
+</html>

@@ -82,9 +82,12 @@ Request video from a camera and audio from a mic (if there is one). Another supe
 
 Media query events! I'm guessing under the hood this is driven off the same thing that drives css media queries. So, very likley, we have access to the same ones! (Don't take my word for it, try it!)
 
-## Day 21, Feb17th 2018 [`hasFocus`](https://ijmccallum.github.io/30-days-of/MDN/hasFocus/)
+## Day 21, Feb 17th 2018 [`hasFocus`](https://ijmccallum.github.io/30-days-of/MDN/hasFocus/)
 
 A teeny one but probably a useful one one day! Lets you know if the user is focused on the current page. Would probably be nice to give some kind of visual indication of focus. It's super easy! Also a lead in to the Page_Visibility_API which I'll have to gieva whirl in a future day.
+
+## Day 22, Feb 18th 2018 [`DOMImplementation`](https://ijmccallum.github.io/30-days-of/MDN/DOMImplementation/)
+Creating DOMs! Mad - the examples look to use this as a way of replacing the content of an iframe. Not sure why, unless maybe you were looking to maybe polyfill shadow dom?
 
 Future ideas:
 
