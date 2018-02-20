@@ -89,10 +89,14 @@ A teeny one but probably a useful one one day! Lets you know if the user is focu
 ## Day 22, Feb 18th 2018 [`DOMImplementation`](https://ijmccallum.github.io/30-days-of/MDN/DOMImplementation/)
 Creating DOMs! Mad - the examples look to use this as a way of replacing the content of an iframe. Not sure why, unless maybe you were looking to maybe polyfill shadow dom?
 
+## Day 23, Feb 19th 2018 [`createRange`](https://ijmccallum.github.io/30-days-of/MDN/Range/)
+Pretty much all the examples online create ranges from `document.selection.createRange()`. Granted that seems the most intuitive use case. I was curious about how to do it manually so that's what I've done! The second properties I'm not yet sure what they do, more experimentation / reading would be required, but a randomly interesting one none the less.
+
 Future ideas:
 
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
  - https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
+ - document.selection
  - Streams
  - node
  - element properties
