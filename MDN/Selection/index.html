@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selection: 30 days of MDN</title>
+    <style>
+        body {
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, debitis? Assumenda qui eum fuga veritatis repudiandae, tenetur cupiditate unde temporibus error quibusdam necessitatibus? Iure, dolorum modi cumque dolorem eveniet illo!
+        </p>
+        <p id="p2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, debitis? Assumenda qui eum fuga veritatis repudiandae, tenetur cupiditate unde temporibus error quibusdam necessitatibus? Iure, dolorum modi cumque dolorem eveniet illo!
+        </p>
+        <textarea name="" id="" cols="30" rows="10">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod fugit harum incidunt impedit dolores at sunt ipsum doloremque reiciendis veniam voluptate inventore minus laborum atque quisquam quibusdam ex, exercitationem odit?
+        </textarea>
+        <p>
+            <span>s</span>
+            <span>p</span>
+            <span>a</span>
+            <span>n</span>
+            <span>n</span>
+            <span>e</span>
+            <span>d</span>
+            <span> </span>
+            <span>l</span>
+            <span>e</span>
+            <span>t</span>
+            <span>t</span>
+            <span>e</span>
+            <span>r</span>
+            <span>s</span>
+        </p>
+    </div>
+    <script>
+        /*
+        Range of selected text, or the position of the caret
+        note the difference between the first and second paragraphs. range index is including the whitespace.
+        Also note that the spanned letters range between 0 and 1 but the start node and end node are called out. 
+        Spans per word would seem to be the way to go for syntax highlighting... no idea about the textarea / input way of doing things
+        Would need to study VS Code or atom a bit to get inspiration
+        */
+        console.log('window.getSelection()', window.getSelection());
+
+        document.onclick = function(e){
+            var selection = window.getSelection();
+                //els or chars from the start to the selection start
+                //els or chars, preceeding
+            console.groupCollapsed(selection.type, selection.anchorOffset, selection.focusOffset);
+                console.log('Selection.isCollapsed', selection.isCollapsed);
+                console.log('start node', selection.anchorNode);
+                console.log('end node', selection.focusNode);
+                console.log('Selection.rangeCount', selection.rangeCount);
+            console.groupEnd();
+        }
+    </script>
+</body>
+</html>

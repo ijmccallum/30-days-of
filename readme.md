@@ -92,6 +92,9 @@ Creating DOMs! Mad - the examples look to use this as a way of replacing the con
 ## Day 23, Feb 19th 2018 [`createRange`](https://ijmccallum.github.io/30-days-of/MDN/Range/)
 Pretty much all the examples online create ranges from `document.selection.createRange()`. Granted that seems the most intuitive use case. I was curious about how to do it manually so that's what I've done! The second properties I'm not yet sure what they do, more experimentation / reading would be required, but a randomly interesting one none the less.
 
+## Day 24, Feb 20th 2018 [`Selection`](https://ijmccallum.github.io/30-days-of/MDN/Selection/)
+Dealing with the text you highlight, or click into. This gives a way to know where in a paragraph you're interacting and workes accross elements. So were you to build a browser based text editor of some kind with something like syntax highlighting, this is a possible tool that could come in really handy!
+
 Future ideas:
 
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
