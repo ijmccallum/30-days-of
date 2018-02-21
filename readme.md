@@ -104,3 +104,9 @@ Future ideas:
  - node
  - element properties
  - https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap
+
+
+Future 30 days of idea: jargon
+
+ - overloading
+ - polymorphism
