@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Streams: 30 Days of MDN</title>
+    <style>
+    .grid {
+        padding: 2px 0 0 2px;
+        font-size: 0;
+    }
+    .result {
+        width: 10px;
+        height: 10px;
+        margin: 0 2px 2px 0;
+        background-color: blueviolet;
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+    <div class="grid" id="results">
+        <div class="result" id="original"></div>
+    </div>
+    <script>
+        var resultsEl = document.getElementById('results');
+        var starter = document.getElementById('original');
+        
+        fetch('stream.png').then(function(response) {
+            //attaching a reader to the stream
+            const reader = response.body.getReader();
+            // console.log('reader', reader);
+            //
+            reader.read().then(({ done, value }) => {
+                // Is there no more data to read?
+                if (done) {
+                    console.log('Finished reading the stream!');
+                    return;
+                }
+
+                console.log('Chunk: ', value);
+                var newNode = document.createElement("div");
+                newNode.className = "result";
+                resultsEl.insertBefore(newNode, starter);
+            }).catch((err) => {
+                console.log('stream err: ', err);
+            });
+            reader.pipe
+        }).catch(function() {
+            console.log("Booo");
+        });
+    </script>
+</body>
+</html>

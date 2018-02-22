@@ -95,6 +95,9 @@ Pretty much all the examples online create ranges from `document.selection.creat
 ## Day 24, Feb 20th 2018 [`Selection`](https://ijmccallum.github.io/30-days-of/MDN/Selection/)
 Dealing with the text you highlight, or click into. This gives a way to know where in a paragraph you're interacting and workes accross elements. So were you to build a browser based text editor of some kind with something like syntax highlighting, this is a possible tool that could come in really handy!
 
+## Day 25, Feb 21st 2018 [`Streams`](https://ijmccallum.github.io/30-days-of/MDN/Streams/)
+Whoa - this is probably the most ambitious one I've tried yet! Think I'll do a double and spend tomorrow on streams too. Today was just reading up on it and trying to read one. Currently I'm just getting one giant "chunk" though I have a suspision it's not actually a chunk - more a completion. There's a pipe through thing I've not dug into that looks to be the key.
+
 Future ideas:
 
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
