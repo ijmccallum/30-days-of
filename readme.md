@@ -98,6 +98,10 @@ Dealing with the text you highlight, or click into. This gives a way to know whe
 ## Day 25, Feb 21st 2018 [`Streams`](https://ijmccallum.github.io/30-days-of/MDN/Streams/)
 Whoa - this is probably the most ambitious one I've tried yet! Think I'll do a double and spend tomorrow on streams too. Today was just reading up on it and trying to read one. Currently I'm just getting one giant "chunk" though I have a suspision it's not actually a chunk - more a completion. There's a pipe through thing I've not dug into that looks to be the key.
 
+## Day 26, Feb22nd 2018 [`MutationObserver`](https://ijmccallum.github.io/30-days-of/MDN/MutationObserver/)
+Register an event listener for changes in the dom below a given element. Don't really need to say much more than that really - it's lovely!
+
+
 Future ideas:
 
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
@@ -109,7 +113,9 @@ Future ideas:
  - https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap
 
 
-Future 30 days of idea: jargon
+Future 30 days of idea: jargon / concepts
 
  - overloading
  - polymorphism
+ - btrees
+ - hash tables

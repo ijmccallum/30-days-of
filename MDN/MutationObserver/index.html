@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MutationObserver: 30 Days of MDN</title>
+</head>
+<body>
+    <div id="target"></div>
+    
+    <script>
+        var targetNode = document.getElementById('target');
+
+        // Callback function to execute when mutations are observed
+        var mutationHandler = function(mutations) {
+            console.log('mutations', mutations)
+            // for(var mutation of mutationsList) {
+                
+            // }
+        };
+
+        // Create an observer instance linked to the callback function
+        var observer = new MutationObserver(mutationHandler);
+
+        // Start observing the target node for configured mutations
+        observer.observe(targetNode, {
+            attributes: true, 
+            childList: true
+        });
+
+        targetNode.innerHTML = 'one';
+        targetNode.innerHTML = 'two';
+
+        // Later, you can stop observing
+        // observer.disconnect();    
+    </script>
+</body>
+</html>
