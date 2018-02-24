@@ -110,16 +110,10 @@ Going fullscreen! Will only do it on a user interaction and it's only running th
 ## Day 29, Feb 25th 2018 [`oncontextmenu`](https://ijmccallum.github.io/30-days-of/MDN/oncontextmenu/)
 So this is how to code a context / right click menu with css and javascript! That was actually surprisingly easy and also more manual than I was expecting. Figured there may have been a nativ default, but nope - seems if you want one you've got to do it completely custom!
 
-Future ideas:
+## Day 30, Feb 26th 2018 [`BeforeUnloadEvent`](https://ijmccallum.github.io/30-days-of/MDN/BeforeUnloadEvent/)
+Ah - this is how the "don't forget to save your work!" thing happens. Though you can't give it you're own message, the browser will only ever show it's own message. Still - good to know!
 
- - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
- - https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
- - document.selection
- - Streams
- - node
- - element properties
- - https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap
-
+---
 
 Future 30 days of idea: jargon / concepts
 
