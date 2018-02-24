@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fullscreen: 30 Days of MDN</title>
+    <style>
+        #fullscreen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="fullscreen">
+        <button onclick="full()">fullScreen!</button>
+        <button onclick="closer()">close</button>
+    </div>
+    <script>
+        fullEl = document.getElementById('fullscreen');
+        function full(){
+            if (fullEl.requestFullscreen) {
+                fullEl.requestFullscreen();
+            } else if (fullEl.webkitRequestFullscreen) {
+                fullEl.webkitRequestFullscreen();
+            } else if (fullEl.mozRequestFullScreen) {
+                fullEl.mozRequestFullScreen();
+            } else if (fullEl.msRequestFullscreen) {
+                fullEl.msRequestFullscreen();
+            }
+        }
+
+        function closer() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+
+        var eventName = "fullscreenchange";
+        if (document.onwebkitfullscreenchange) {
+            eventName = "onwebkitfullscreenchange";
+        } else if (document.onmozfullscreenchange) {
+            eventName = "onmozfullscreenchange";
+        } else if (document.MSFullscreenChange) {
+            eventName = "MSFullscreenChange";
+        }
+         console.log('eventName', eventName);
+        document.addEventListener(eventName, function( event ) {
+            console.log('full screen change!', event);
+
+            // The event object doesn't carry information about the fullscreen state of the browser,
+            // but it is possible to retrieve it through the fullscreen API
+            // The target of the event is always the document,
+            // but it is possible to retrieve the fullscreen element through the API
+            console.log('document.fullscreenElement', document.fullscreenElement);
+            console.log('document.webkitFullscreenElement', document.webkitFullscreenElement);
+            console.log('document.mozFullScreenElement', document.mozFullScreenElement);
+            console.log('document.msFullscreenElement', document.msFullscreenElement);
+
+        });
+    </script>    
+</body>
+</html>

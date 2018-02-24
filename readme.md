@@ -104,6 +104,9 @@ Register an event listener for changes in the dom below a given element. Don't r
 ## Day 27, Feb 23rd 2018 [`history`](https://ijmccallum.github.io/30-days-of/MDN/history/)
 The browser utility that'll be driving things like react router. Control history flow, add, replace, generally manipulate the users current history. You could have a bit of fun with this one for sure!
 
+## Day 28, Feb 24th 2018 [`fullscreen`](https://ijmccallum.github.io/30-days-of/MDN/Fullscreen/)
+Going fullscreen! Will only do it on a user interaction and it's only running through vendor prefixes (as of this writing) which is a pain, but at least it's achievable! 
+
 Future ideas:
 
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
