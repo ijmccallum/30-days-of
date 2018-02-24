@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oncontextmenu: 30 Days of MDN</title>
+    <style>
+        #menu {
+            position: fixed;
+            display: none;
+            background-color: #eeeeee;
+        }
+        button {
+            border: 0;
+            padding: 5px 10px;
+            display: block;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            background-color: #dddddd;
+        }
+        button:hover {
+            background-color: #cccccc;
+        }
+        button + button {
+            margin-top: 2px;
+            padding-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <button>Hello!</button>
+        <button>I'm a custom</button>
+        <button>context menu!</button>
+    </div>
+    <script>
+        var contextMenuEl = document.getElementById('menu');
+        document.oncontextmenu = function () { // Use document as opposed to window for IE8 compatibility
+            console.log('on context menu?');
+            return false;
+        };
+
+        window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9
+            e.preventDefault();
+            console.log('context menu clicked!', e);
+            contextMenuEl.style.left = event.clientX + "px";
+            contextMenuEl.style.top = event.clientY + "px";
+            contextMenuEl.style.display = "block";
+        }, false);
+
+        window.addEventListener('click', function (e) { // Not compatible with IE < 9
+            e.preventDefault();
+            console.log('document clicked!', e);
+            contextMenuEl.style.display = "none";
+        }, false);
+    </script>
+</body>
+</html>

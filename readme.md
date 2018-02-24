@@ -107,6 +107,9 @@ The browser utility that'll be driving things like react router. Control history
 ## Day 28, Feb 24th 2018 [`fullscreen`](https://ijmccallum.github.io/30-days-of/MDN/Fullscreen/)
 Going fullscreen! Will only do it on a user interaction and it's only running through vendor prefixes (as of this writing) which is a pain, but at least it's achievable! 
 
+## Day 29, Feb 25th 2018 [`oncontextmenu`](https://ijmccallum.github.io/30-days-of/MDN/oncontextmenu/)
+So this is how to code a context / right click menu with css and javascript! That was actually surprisingly easy and also more manual than I was expecting. Figured there may have been a nativ default, but nope - seems if you want one you've got to do it completely custom!
+
 Future ideas:
 
  - [window.performance](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming)
