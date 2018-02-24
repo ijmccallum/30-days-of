@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>history: 30 Days of MDN</title>
+</head>
+<body>
+    <button onclick="window.history.back()">go back!</button>
+    <button onclick="addToHistory()">add to history!</button>
+    <button onclick="replaceHistory()">replace this moment in history!</button>
+    <script>
+        console.log('histroy: ', window.history);
+        var adder = 0;
+        function addToHistory(){
+            var stateObj = { foo: "bar" };
+            history.pushState(stateObj, "page " + adder, adder + ".html?query=yeah!");
+            console.log('added! ', window.history.length);
+            adder++;
+        }
+
+        function replaceHistory(){
+            var stateObj = { foo: "bar" };
+            history.replaceState(stateObj, "page " + adder, adder + ".html#hash=yeayea!");
+            console.log('replaced! ', window.history.length);
+            adder++;
+        }
+
+        window.onpopstate = function(event) {
+            console.log('histroy changed! ', event, window.history.length);
+        };
+    </script>
+</body>
+</html>

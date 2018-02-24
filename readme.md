@@ -98,9 +98,11 @@ Dealing with the text you highlight, or click into. This gives a way to know whe
 ## Day 25, Feb 21st 2018 [`Streams`](https://ijmccallum.github.io/30-days-of/MDN/Streams/)
 Whoa - this is probably the most ambitious one I've tried yet! Think I'll do a double and spend tomorrow on streams too. Today was just reading up on it and trying to read one. Currently I'm just getting one giant "chunk" though I have a suspision it's not actually a chunk - more a completion. There's a pipe through thing I've not dug into that looks to be the key.
 
-## Day 26, Feb22nd 2018 [`MutationObserver`](https://ijmccallum.github.io/30-days-of/MDN/MutationObserver/)
+## Day 26, Feb 22nd 2018 [`MutationObserver`](https://ijmccallum.github.io/30-days-of/MDN/MutationObserver/)
 Register an event listener for changes in the dom below a given element. Don't really need to say much more than that really - it's lovely!
 
+## Day 27, Feb 23rd 2018 [`history`](https://ijmccallum.github.io/30-days-of/MDN/history/)
+The browser utility that'll be driving things like react router. Control history flow, add, replace, generally manipulate the users current history. You could have a bit of fun with this one for sure!
 
 Future ideas:
 
